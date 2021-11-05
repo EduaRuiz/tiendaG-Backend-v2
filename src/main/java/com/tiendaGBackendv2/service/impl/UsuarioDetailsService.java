@@ -29,13 +29,12 @@ public class UsuarioDetailsService implements UserDetailsService{
 			if(i.getUser().equals(username)) {
 				Usuario usuario = i;
 				Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
-				authorities.add(new SimpleGrantedAuthority(usuario.getRol()));
-				return new User(username, usuario.getPassword(), authorities);
-				
+				System.out.println("___________________________1");				
+				System.out.println("___________________________1");				
+				authorities.add(new SimpleGrantedAuthority(usuario.getRole()));
+				return new User(username, usuario.getPassword(), authorities);				
 			}
-		}
-		
+		}		
 		return null;
 	}
-
 }

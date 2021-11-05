@@ -4,68 +4,89 @@ import java.io.Serializable;
 
 import org.springframework.data.annotation.Id;
 
-public class Usuario implements Serializable{
+public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	private String _id;
+	private Long idCard;
+	
 	private String name;
-	private long identification;
 	private String email;
+	private String sucursal;
+	private String role;
+	private boolean status;
 	private String password;
 	private String user;
-	private String rol;
-	private boolean status;
 
 	public Usuario() {
 	}
 
-	public Usuario(String name, long identification, String email, String password, String user, String rol,
-			boolean status) {
-		super();
+	public Usuario(Long idCard, String name, String email, String sucursal, String role, boolean status, String password,
+			String user) {
+		this.idCard = idCard;
 		this.name = name;
-		this.identification = identification;
 		this.email = email;
+		this.sucursal = sucursal;
+		this.role = role;
+		this.status = status;
 		this.password = password;
 		this.user = user;
-		this.rol = rol;
-		this.status = status;
+	}
+
+	public Long getIdCard() {
+		return this.idCard;
+	}
+
+	public void setIdCard(Long idCard) {
+		this.idCard = idCard;
 	}
 
 	public String getName() {
-		return name;
-	}
-
-	public String get_id() {
-		return _id;
-	}
-
-	public void set_id(String _id) {
-		this._id = _id;
+		return this.name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	public long getIdentification() {
-		return identification;
-	}
-
-	public void setIdentification(long identification) {
-		this.identification = identification;
-	}
-
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
+	public String getSucursal() {
+		return this.sucursal;
+	}
+
+	public void setSucursal(String sucursal) {
+		this.sucursal = sucursal;
+	}
+
+	public String getRole() {
+		return this.role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public boolean isStatus() {
+		return this.status;
+	}
+
+	public boolean getStatus() {
+		return this.status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
 	public String getPassword() {
-		return password;
+		return this.password;
 	}
 
 	public void setPassword(String password) {
@@ -73,26 +94,10 @@ public class Usuario implements Serializable{
 	}
 
 	public String getUser() {
-		return user;
+		return this.user;
 	}
 
 	public void setUser(String user) {
 		this.user = user;
-	}
-
-	public String getRol() {
-		return rol;
-	}
-
-	public void setRol(String rol) {
-		this.rol = rol;
-	}
-
-	public boolean isStatus() {
-		return status;
-	}
-
-	public void setStatus(boolean status) {
-		this.status = status;
 	}
 }

@@ -29,8 +29,8 @@ public class UsuarioController {
 		return usuarioServiceApi.getAll();
 	}
 
-	@GetMapping(value = "/find/{}id")
-	public Usuario find(@PathVariable String id) {
+	@GetMapping(value = "/find/{id}")
+	public Usuario find(@PathVariable Long id) {
 		return usuarioServiceApi.get(id);
 	}
 
@@ -41,7 +41,7 @@ public class UsuarioController {
 	}
 
 	@GetMapping(value = "/delete/{id}")
-	public ResponseEntity<Usuario> delete(@PathVariable String id) {
+	public ResponseEntity<Usuario> delete(@PathVariable Long id) {
 		Usuario usuario = usuarioServiceApi.get(id);
 		if (usuario != null) {
 			return new ResponseEntity<Usuario>(HttpStatus.NO_CONTENT);
